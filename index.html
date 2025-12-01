@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VedaChain - Ayurvedic Traceability</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" role="navigation" aria-label="Main navigation">
+      <div>
+        <div class="brand">
+          <div class="logo">VC</div>
+          <div>
+            <h1>VedaChain</h1>
+            <p>AYURVEDIC TRACEABILITY</p>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Sidebar menu">
+          <a href="index.html" class="active">Dashboard</a>
+          <a href="farmer.html">Farmer Collection</a>
+          <a href="processing.html">Processing Unit</a>
+          <a href="quality.html">Quality Lab</a>
+          <a href="scan.html">Consumer Scan</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div><span class="status-dot" aria-hidden="true"></span> Network Status: <strong>Online</strong></div>
+        <div style="margin-top:6px;font-size:12px;">VedaNet Mainnet v1.0</div>
+      </div>
+    </aside>
+
+    <main class="main" role="main">
+      <div class="topbar">
+        <div>
+          <h2 class="page-title">Network Dashboard</h2>
+          <div class="page-sub">Real-time supply chain monitoring</div>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="badge">Device: Demo</div>
+        </div>
+      </div>
+
+      <div class="kpi-row">
+        <div class="kpi">
+          <small>Total Transactions</small>
+          <div class="value" id="totalTx">0</div>
+        </div>
+        <div class="kpi">
+          <small>Active Batches</small>
+          <div class="value" id="activeBatches">0</div>
+        </div>
+        <div class="kpi">
+          <small>Node Health</small>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:14px;height:14px;border-radius:50%;background:#2fd67a"></div>
+            <div style="font-weight:800">Operational</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="panel" aria-labelledby="transactions-title">
+          <h3 id="transactions-title">Transaction Types</h3>
+          <div class="empty-area"> <div style="text-align:center"><strong style="display:block;color:#0b5d45">No transactions yet</strong><span class="muted">Live chart will appear here once data is received</span></div></div>
+        </section>
+
+        <aside class="panel" aria-labelledby="compliance-title">
+          <h3 id="compliance-title">Compliance Audit</h3>
+          <div style="display:flex;align-items:center;justify-content:space-between;height:200px">
+            <div class="donut-wrap" style="flex:1;min-width:150px">
+              <canvas id="donutChart" width="160" height="160"></canvas>
+            </div>
+            <div style="flex:1;padding-left:12px">
+              <div class="donut-legend">
+                <div class="legend-item"><span class="legend-key c-good"></span> Compliant <strong class="legend-val">72%</strong></div>
+                <div class="legend-item"><span class="legend-key c-warn"></span> Warning <strong class="legend-val">18%</strong></div>
+                <div class="legend-item"><span class="legend-key c-bad"></span> Non-compliant <strong class="legend-val">10%</strong></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="small-row">
+        <div class="panel"><h3>Active Nodes</h3><div class="bignum" id="nodesCount">5</div></div>
+        <div class="panel"><h3>Recent Batches</h3><div class="muted">No recent batch activity</div></div>
+        <div class="panel"><h3>Export</h3><div style="margin-top:8px"><button id="exportBtn" class="btn">Export CSV</button></div></div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
